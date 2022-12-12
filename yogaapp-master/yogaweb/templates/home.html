@@ -1,0 +1,259 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Yoga Class</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{%static 'styles.css' %}">
+</head>
+
+<body>
+
+
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo-img" style="background-image:url(../static/img/banner/wall1.jpg)">
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-8">
+                            <div class="main-menu  d-none d-lg-block text-center">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="/home/">home</a></li>
+
+                                        <li><a href="/instructor/">Be an instructor</a></li>
+                                        {% if user.is_authenticated %}
+                                        <li><a href="/profile/">Profile</a></li>
+
+                                        <li><a href="/logout/">logout</a></li>
+                                        {% else %}
+                                        <li><a href="/signup/">Signup</a></li>
+                                        <li><a href="/login/">login</a></li>
+
+                                        {% endif %}
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 d-none d-lg-block">
+                            <div class="log_chat_area d-flex align-items-end">
+                                {% comment %} <a href="/logout/" target="_black" class="say_hi">Say Hello</a>
+                                {% endcomment %}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="bradcam_area breadcam_bg_3">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text"><br><br><br><br><br>
+                        {% comment %} <h3>Yoga Class App</h3> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if user.is_authenticated %}
+    {% if msg == 1%}
+    <center>
+        <h1>Your membership validity is ended. please pay your fees as soon as possible.....to pay fees <a
+                href="/completepayment/">click here</a></h1>
+    </center>
+    {% endif %}
+    <br><br>
+    <center>
+        <p>
+            This Yoga class application is a dynamic website which reacts at realtime as well as it is a highly scalable
+            application.</p>
+        <p>This website is totally developed on tech stacks Django, Python, Html, Css, Bootstrap, Javascript,
+            postgresql(Database).I have used ORM (Object Relationship Mapping) for database handling and DTL (Django
+            Template Library) and Jinja for Rest API connection and dynamic data handling in between backend and
+            frontend.</p>
+        <p>this application have feature of secure signup and login with django authentication. Signup has password
+            validator and username, email, age validations which is very powerful. login is done using the safer auth
+            library of django authentication. The forgot password option is also given to the user where after
+            submitting some valid information the password will be sent to the user's valid email id. After logging in,
+            users will be able to edit their own profile. where view profile, edit profile, change password, view
+            transaction history and payment option is given to the user. i have added be an instructor page(if someone
+            wants to be yoga instructor at class then he/she can apply it from there), contact us page(where user can
+            write their query,feedback,issues,requests to yoga class), Newsletter(to get regular update from class),
+            Advertisement page (If website admin wants to post some advertisements for class then admin can do it from
+            admin portal),Admin portal(to manage all the database). Everything has an email alert system.</p>
+        <p>Some problem statements solved are here.. users will be able to check the validity of their membership or
+            will get an alert on their mail also. while payment users will be able to change their batch/shift. Each and
+            every transaction history will be shown to the user.</p>
+
+        {% else %}
+        <br><br>
+        <center>
+            <p>
+                This Yoga class application is a dynamic website which reacts at realtime as well as it is a highly
+                scalable application.</p>
+            <p>This website is totally developed on tech stacks Django, Python, Html, Css, Bootstrap, Javascript,
+                postgresql(Database)I have used ORM (Object Relationship Mapping) for database handling and DTL (Django
+                Template Library) and Jinja for Rest API connection and dynamic data handling in between backend and
+                frontend.</p>
+            <p>this application have feature of secure signup and login with django authentication. Signup has password
+                validator and username, email, age validations which is very powerful. login is done using the safer
+                auth library of django authentication. The forgot password option is also given to the user where after
+                submitting some valid information the password will be sent to the user's valid email id. After logging
+                in, users will be able to edit their own profile. where view profile, edit profile, change password,
+                view transaction history and payment option is given to the user. i have added be an instructor page(if
+                someone wants to be yoga instructor at class then he/she can apply it from there), contact us page(where
+                user can write their query,feedback,issues,requests to yoga class), Newsletter(to get regular update
+                from class), Advertisement page (If website admin wants to post some advertisements for class then admin
+                can do it from admin portal),Admin portal(to manage all the database). Everything has an email alert
+                system.</p>
+            <p>Some problem statements solved are here.. users will be able to check the validity of their membership or
+                will get an alert on their mail also. while payment users will be able to change their batch/shift. Each
+                and every transaction history will be shown to the user.</p>
+
+            {% endif %}
+            <footer class="footer">
+                <div class="footer_top">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-2 col-md-3">
+                                <div class="footer_logo wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
+
+                                </div>
+                            </div>
+                            <div class="col-xl-7 col-lg-7 col-md-9">
+                                <div class="menu_links">
+                                    <ul>
+                                        <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".2s"
+                                                href="/home/">| home |</a class="wow fadeInUp" data-wow-duration="1s"
+                                                data-wow-delay=".3s"></li>
+                                        <!-- <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".4s"
+                                                href="/advertisement/">| Advertisement |</a></li> -->
+                                        {% if user.is_authenticated %}
+                                        <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1.1s"
+                                                href="/profile/">| Profile |</a></li>
+                                        {% else %}
+                                        <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".8s"
+                                                href="/signup/">| Signup |</a></li>
+                                        <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1s"
+                                                href="/login/">| Login |</a></li>
+                                        {% endif %}
+                                        <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1.1s"
+                                                href="/instructor/">| Be A Instructor |</a></li>
+                                        <!-- <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1.1s"
+                                                href="/contact/">| Contact |</a></li> -->
+                                        {% if user.is_authenticated%}
+                                        <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1.1s"
+                                                href="/logout/">| Logout |</a></li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-12">
+                                <div class="socail_links">
+                                    <ul>
+                                        <li><a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s"
+                                                href=""> <i
+                                                    class="fa fa-facebook"></i> </a></li>
+                                        <li><a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s"
+                                                href=""> <i
+                                                    class="fa fa-twitter"></i> </a></li>
+                                        <li><a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s"
+                                                href=""> <i
+                                                    class="fa fa-instagram"></i> </a></li>
+                                        <li><a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"
+                                                href=""> <i
+                                                    class="fa fa-google-plus"></i> </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copy-right_text">
+                    <div class="container">
+                        <div class="footer_border"></div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <p class="copy_right text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.3s">
+                                    Made with ❤️ by <a href="" target="_blank">Manav Majithia</a>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </footer>
+
+
+            <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+            <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+            <script src="{% static 'js/popper.min.js' %}"></script>
+            <script src="{% static 'js/bootstrap.min.js' %}"></script>
+            <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+            <script src="js/isotope.pkgd.min.js"></script>
+            <script src="{% static 'js/ajax-form.js' %}"></script>
+            <script src="{% static 'js/waypoints.min.js' %}"></script>
+            <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+            <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+            <script src="{% static 'js/scrollIt.js' %}"></script>
+            <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+            <script src="{% static 'js/wow.min.js' %}"></script>
+            <script src="{% static 'js/nice-select.min.js' %}"></script>
+            <script src="{% static 'js/jquery.slicknav.min.js' %}"></script>
+            <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+            <script src="{% static 'js/plugins.js' %}"></script>
+            <script src="{% static 'js/gijgo.min.js' %"></script>
+
+<script src="{% static 'js/contact.js' %}"></script>
+            <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+            <script src="{% static 'js/jquery.form.js' %}"></script>
+            <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+            <script src="{% static 'js/mail-script.js' %}"></script>
+            <script src="{% static 'js/main.js' %}"></script>
+
+            <script async src="{% static 'https://www.googletagmanager.com/gtag/js?id=UA-23581568-13' %}"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+
+                gtag('config', 'UA-23581568-13');
+            </script>
+</body>
+
+</html>
